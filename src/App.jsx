@@ -59,12 +59,15 @@ function App() {
   const handleRestringirTexto = (event) => {
     const regex = /^[a-z\s]*$/;
     const inputText = event.target.value;
-    console.log(regex.test(inputText));
     if (regex.test(inputText) || inputText === '') setTextoInserido(inputText);
   };
   const toggleDarkMode = () => {
     setDark(!dark);
     document.body.classList.toggle('dark');
+  };
+
+  const transfTexto = () => {
+    return setTextoInserido(textoModificado);
   };
 
   return (
@@ -93,6 +96,8 @@ function App() {
           setTextoModificado={setTextoModificado}
           handleCopiarTexto={handleCopiarTexto}
           dark={dark}
+          textoInserido={textoInserido}
+          transfTexto={transfTexto}
         />
       </div>
       <Footer dark={dark} />

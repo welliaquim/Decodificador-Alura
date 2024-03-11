@@ -1,6 +1,14 @@
 import interrogacao from '../images/interrogacao.png';
 
-export function RightSide({ textoModificado, handleCopiarTexto, setTextoInserido, setTextoModificado, dark }) {
+export function RightSide({
+  textoInserido,
+  textoModificado,
+  handleCopiarTexto,
+  setTextoInserido,
+  setTextoModificado,
+  dark,
+  transfTexto,
+}) {
   return (
     <>
       {textoModificado === '' ? (
@@ -15,6 +23,10 @@ export function RightSide({ textoModificado, handleCopiarTexto, setTextoInserido
           <div>
             <button className={dark ? 'copy dark' : 'copy'} onClick={handleCopiarTexto}>
               Copiar
+            </button>
+
+            <button className={dark ? 'copy dark' : 'copy'} onClick={transfTexto}>
+              Transferir texto
             </button>
             <button
               className={dark ? 'reset dark' : 'reset'}
