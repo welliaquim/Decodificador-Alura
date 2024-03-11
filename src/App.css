@@ -18,7 +18,7 @@ body {
   background-image: url(./images/output.gif); /* Créditos do GIF: Freepik */
   background-repeat: no-repeat;
   background-position: center;
-  transition: ease-in-out 1.5s;
+  transition: ease-in-out 0.5s;
 }
 
 /* Estilização HEADER */
@@ -223,7 +223,7 @@ body.dark {
   background-position: center;
   background-size: auto;
   filter: grayscale(1);
-  transition: ease-in-out 1.5s;
+  transition: ease-in-out 0.5s;
 }
 
 header.dark,
