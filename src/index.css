@@ -1,0 +1,290 @@
+:root {
+  --main-bg-color: rgb(240, 237, 207);
+  --left-side-color: rgba(0, 0, 0, 0.3);
+  --right-side-color: rgba(0, 43, 83, 0.752);
+  --main-button: rgb(38, 36, 36);
+  --secondary-button: rgba(11, 96, 176, 0.492);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--main-bg-color);
+  max-width: 120rem;
+  background-image: url(./images/output.gif); /* Créditos do GIF: Freepik */
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* estilização logo alura no topo */
+.container,
+.container__left-side,
+.container__left-side p,
+.container__left-side div:last-of-type,
+.right-side,
+.right-side2,
+footer,
+footer div {
+  display: flex;
+}
+
+.container,
+.container__left-side div:last-of-type {
+  justify-content: space-evenly;
+}
+
+.container__left-side,
+.right-side,
+.right-side2 {
+  flex-direction: column;
+}
+
+.left-side__textEntry,
+.container__left-side button,
+.right-side,
+.right-side2,
+.copy,
+.reset {
+  border-radius: 1rem;
+}
+
+.left-side__textEntry {
+  width: 42.5rem;
+  height: 30rem;
+  padding: 1rem;
+  background: var(--left-side-color);
+  font-size: 2rem;
+  line-height: 3rem;
+  color: white;
+  font-family: 'Ojuju', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.left-side__textEntry:disabled {
+  cursor: not-allowed;
+}
+
+.container__left-side p {
+  padding: 3rem 0 1rem 0;
+  align-items: center;
+  gap: 0.3rem;
+  font-family: 'Orbitron', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* estilização abaixo referente aos botões criptografar e descriptografar */
+.container__left-side button {
+  padding: 0.5rem 3rem;
+  font-family: 'Micro 5', sans-serif;
+  font-weight: 400;
+  font-size: 1.8rem;
+}
+
+.container__left-side button:hover {
+  cursor: pointer;
+}
+
+.container__left-side button:disabled {
+  cursor: not-allowed;
+}
+
+.copy,
+.reset {
+  padding: 0.5rem 2rem;
+  font-family: 'Ojuju', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.copy:hover,
+.reset:hover {
+  cursor: pointer;
+}
+
+.uncripto {
+  background: white;
+}
+
+.cripto:disabled {
+  filter: contrast(0.2);
+}
+.cripto,
+.copy {
+  background: var(--main-button);
+  color: white;
+}
+
+.cripto,
+.uncripto,
+.copy,
+.reset {
+  transition: ease-out 2s;
+  border: 0px;
+}
+
+.cripto:active,
+.uncripto:active,
+.copy:active,
+.reset:active {
+  filter: invert(1);
+  transition: ease-in 1s;
+}
+
+/* fim da estilização do lado esquerdo do container */
+
+.right-side,
+.right-side2 {
+  padding: 1rem;
+  width: 20rem;
+  background: var(--right-side-color);
+  color: white;
+  text-align: center;
+  align-items: center;
+  font-family: 'Ojuju', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  gap: 1rem;
+  max-height: 40rem;
+}
+
+.right-side2 {
+  gap: 15rem;
+  height: 40rem;
+}
+
+.right-side2 div {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 65%;
+  gap: 2rem;
+}
+
+.right-side img {
+  height: 60%;
+  filter: drop-shadow(2px 4px 6px black) grayscale(1);
+}
+
+h3 {
+  padding: 3rem 1rem 0;
+}
+
+/* estilização do rodapé da pagina */
+footer {
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  color: rgba(0, 0, 0, 0.3);
+  padding-top: 0.2rem;
+}
+
+footer div {
+  gap: 1rem;
+}
+
+footer div img {
+  width: 1.5rem;
+}
+
+.invert {
+  filter: invert();
+  width: 1.6rem;
+}
+footer span {
+  font-weight: bolder;
+  font-size: 1rem;
+}
+
+@media screen and (min-width: 768px) and (max-width: 999px) {
+  header {
+    padding: 1rem;
+  }
+  .container {
+    flex-direction: column;
+    padding: 1rem;
+  }
+  .container__left-side {
+    padding: 0 0 2rem 0;
+  }
+
+  .container__left-side p {
+    padding: 3rem 0 1rem 1.4rem;
+  }
+  .left-side__textEntry {
+    align-self: center;
+  }
+  .right-side,
+  .right-side2 {
+    align-self: center;
+    width: 100%;
+  }
+  .right-side2 {
+    height: 15rem;
+  }
+
+  .right-side2 div {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    top: -9rem;
+    gap: 2rem;
+  }
+  .right-side img {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  header {
+    padding: 1rem;
+  }
+  .container {
+    flex-direction: column;
+    width: 100%;
+    padding: 1rem;
+  }
+  .container__left-side div:last-of-type {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    padding-bottom: 2rem;
+  }
+  .left-side__textEntry {
+    width: 100%;
+  }
+  button {
+    width: 80%;
+    max-width: 20rem;
+  }
+  .right-side,
+  .right-side2 {
+    align-self: center;
+    width: 100%;
+  }
+  .right-side2 {
+    height: fit-content;
+    gap: 3rem;
+  }
+  .right-side2 div {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    top: 0rem;
+    gap: 2rem;
+  }
+
+  .right-side img {
+    display: none;
+  }
+}
