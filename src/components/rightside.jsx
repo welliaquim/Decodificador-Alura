@@ -32,7 +32,7 @@ export function RightSide({
             <button
               className={dark ? 'reset dark' : 'reset'}
               onClick={() => {
-                resetTexto;
+                resetTexto();
               }}
             >
               Voltar ao início
