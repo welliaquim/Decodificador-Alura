@@ -65,9 +65,12 @@ function App() {
     setDark(!dark);
     document.body.classList.toggle('dark');
   };
-
   const transfTexto = () => {
     return setTextoInserido(textoModificado);
+  };
+  const resetTexto = () => {
+    setTextoInserido('');
+    setTextoModificado('');
   };
 
   return (
@@ -98,6 +101,7 @@ function App() {
           dark={dark}
           textoInserido={textoInserido}
           transfTexto={transfTexto}
+          resetTexto={resetTexto}
         />
       </div>
       <Footer dark={dark} />

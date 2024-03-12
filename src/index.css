@@ -278,10 +278,16 @@ footer span {
   }
   .right-side2 div {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    align-items: center;
     position: relative;
     top: 0rem;
-    gap: 2rem;
+    gap: 1rem;
+  }
+
+  .copy,
+  .reset {
+    line-height: 0.9;
   }
 
   .right-side img {

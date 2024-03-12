@@ -302,9 +302,12 @@ footer.dark {
     max-width: 20rem;
   }
   .right-side,
-  .right-side-2 {
+  .right-side2 {
     align-self: center;
     width: 100%;
+  }
+  .right-side2 div {
+    flex-direction: column;
   }
   .right-side img {
     display: none;

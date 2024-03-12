@@ -8,6 +8,7 @@ export function RightSide({
   setTextoModificado,
   dark,
   transfTexto,
+  resetTexto,
 }) {
   return (
     <>
@@ -31,8 +32,7 @@ export function RightSide({
             <button
               className={dark ? 'reset dark' : 'reset'}
               onClick={() => {
-                setTextoInserido('');
-                setTextoModificado('');
+                resetTexto;
               }}
             >
               Voltar ao início
