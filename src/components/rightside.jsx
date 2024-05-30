@@ -1,15 +1,6 @@
 import interrogacao from '../images/interrogacao.png';
 
-export function RightSide({
-  textoInserido,
-  textoModificado,
-  handleCopiarTexto,
-  setTextoInserido,
-  setTextoModificado,
-  dark,
-  transfTexto,
-  resetTexto,
-}) {
+export function RightSide({ textoModificado, handleCopiarTexto, dark, transfTexto, resetTexto }) {
   return (
     <>
       {textoModificado === '' ? (
@@ -29,12 +20,7 @@ export function RightSide({
             <button className={dark ? 'copy dark' : 'copy'} onClick={transfTexto}>
               Transferir texto
             </button>
-            <button
-              className={dark ? 'reset dark' : 'reset'}
-              onClick={() => {
-                resetTexto();
-              }}
-            >
+            <button className={dark ? 'reset dark' : 'reset'} onClick={resetTexto}>
               Voltar ao início
             </button>
           </div>

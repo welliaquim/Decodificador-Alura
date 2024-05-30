@@ -1,16 +1,13 @@
-import { useState, useRef } from 'react';
 import './App.css';
-import linkedin from './images/linkedin-icon.png';
-import github from './images/github-icon.png';
-import aluraicone from './images/iconealura.png';
+import { useState } from 'react';
 import { AluraSvg } from './components/alura.jsx';
-import { Alert } from './components/alert.jsx';
 import { Footer } from './components/footer.jsx';
 import { RightSide } from './components/rightside.jsx';
 import { LeftSide } from './components/leftside.jsx';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
-  const [textAreaInicial, setTextAreaInicial] = useState('');
   const [textoInserido, setTextoInserido] = useState('');
   const [textoModificado, setTextoModificado] = useState('');
   const [dark, setDark] = useState(false);
@@ -59,7 +56,11 @@ function App() {
   const handleRestringirTexto = (event) => {
     const regex = /^[a-z\s]*$/;
     const inputText = event.target.value;
-    if (regex.test(inputText) || inputText === '') setTextoInserido(inputText);
+    if (regex.test(inputText) || inputText === '') {
+      setTextoInserido(inputText);
+    } else {
+      toast.warn('Letras maiúsculas e acentos não são permitidos.');
+    }
   };
   const toggleDarkMode = () => {
     setDark(!dark);
@@ -87,7 +88,6 @@ function App() {
         <LeftSide
           textoInserido={textoInserido}
           handleRestringirTexto={handleRestringirTexto}
-          setDark={setDark}
           dark={dark}
           handleCodificar={handleCodificar}
           handleDecodificar={handleDecodificar}
@@ -95,16 +95,14 @@ function App() {
 
         <RightSide
           textoModificado={textoModificado}
-          setTextoInserido={setTextoInserido}
-          setTextoModificado={setTextoModificado}
           handleCopiarTexto={handleCopiarTexto}
           dark={dark}
-          textoInserido={textoInserido}
           transfTexto={transfTexto}
           resetTexto={resetTexto}
         />
       </div>
       <Footer dark={dark} />
+      <ToastContainer position="top-center" limit={5} stacked theme={dark ? 'dark' : 'light'} />
     </>
   );
 }

@@ -71,13 +71,20 @@ footer div {
 }
 
 .container__left-side p {
-  padding: 3rem 0 1rem 0;
+  align-self: center;
+  padding: 1.5rem 0 1.5rem;
   align-items: center;
   gap: 0.3rem;
   font-family: 'Orbitron', sans-serif;
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
+}
+.container__left-side p div {
+  filter: brightness(0.8);
+}
+.container__left-side p div div {
+  filter: grayscale(1) brightness(1000) invert(1);
 }
 
 /* estilização abaixo referente aos botões criptografar e descriptografar */
@@ -245,8 +252,13 @@ footer span {
 }
 
 @media screen and (max-width: 767px) {
-  header {
-    padding: 1rem;
+  .header {
+    padding: 1rem 0;
+  }
+  .header svg {
+    width: 96px;
+    position: absolute;
+    left: -10px;
   }
   .container {
     flex-direction: column;
@@ -292,5 +304,25 @@ footer span {
 
   .right-side img {
     display: none;
+  }
+  .trilho {
+    position: absolute;
+    top: 17px;
+    left: 130px;
+  }
+  .container {
+    margin-top: 2rem;
+  }
+  .left-side__textEntry {
+    height: 20rem;
+  }
+  .container__left-side p div div:last-of-type {
+    padding: 0;
+    text-wrap: nowrap;
+  }
+  .container__left-side p div:first-of-type {
+    display: flex;
+    flex-direction: row;
+    padding: 0.2rem 0;
   }
 }
